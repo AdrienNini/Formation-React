@@ -15,7 +15,7 @@ export default class Welcome extends Component {
     render() {
         const name = this.capitalize();
         return (
-            <div>
+            <div className="Welcome">
                 <h1>Bienvenu { name } sur l'application React !</h1>
                 <p>Vous avez { this.props.age } ans !</p>
             </div>
