@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Horloge.css';
 
 export default class Horloge extends Component {
     constructor(props) {
@@ -7,11 +6,20 @@ export default class Horloge extends Component {
         this.state =  {
             date: new Date()
         }
+    }
 
-        setInterval(() => {
+    componentDidMount() {
+        this.interval = setInterval(() => {
             this.setState({ date: new Date() });
         }, 100)
+    }
 
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextState.date.getSeconds() % 2 === 0;
     }
 
     formatTime(t, w) {

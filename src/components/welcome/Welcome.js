@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class Welcome extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     capitalize() {
         const name = this.props.nom.toLowerCase();
